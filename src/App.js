@@ -37,7 +37,7 @@ const App = () => {
       setBoard(updateBoard);
     }
   };
-  console.log('treasureLocation:', treasureLocation)
+
   return (
     <>
       <h1>Treasure Hunt Game</h1>

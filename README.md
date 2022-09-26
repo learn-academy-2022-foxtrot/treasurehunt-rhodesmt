@@ -10,10 +10,29 @@ As a developer, you are tasked with creating a treasure hunt game. The user will
 ### 📚 User Stories
 
 - As a user, I can see a page with a three by three grid board game with a question mark in each square.
+    -branch: board-game-rhodesmt
+    -mapped over the array in state to dynamically render 9 squares
+    -used flexbox to position the squares
+    -passed the value of the array in state to square
+    -styled the square
 - As a user, when I click on one of the question marks an alert appears with the index position of that question mark in the array.
+    -added a onClick to the square div
+    -added a handleClick method to square
+    -passed index to square and to the handleClick
+    -created handleGamePlay in App.js
+    -passed handleGamePlay to square to get the index through functional props
+
 - As a user, when I click on one of the question marks instead of the alert the question mark turns into a tree emoji.
+    -branch: tree-emoji-rhodesmt
+    -made a copy of the board
+    -updated the value at the particular index to be a tree emoji
+    -emoji keyboard is control + command + spacebar
 - As a user, if I select the winning square the question mark will become a treasure emoji and if I select the losing square the question mark will become a bomb emoji.
+    -branch: bomb-emoji-rhodesmt
+    -added random location for bomb and treasure into state
+    -added a conditional in the handleGamePlay method to produce different outcomes
 - As a user, I can click on a “Play Again” button that will restart the game.
+    -branch: restart-button-rhodesmt
 - As a user, I can see a counter that shows how many guesses I have left. The counter starts at five and decrements one every time I click on a square that is not the treasure nor the bomb.
 - As a user, I can see a message informing me that I won the game if I select the square that contains the treasure.
 - As a user, I can see a message informing me that I lost the game if I select the square that contains the bomb.
