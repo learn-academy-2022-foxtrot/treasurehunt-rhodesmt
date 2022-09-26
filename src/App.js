@@ -30,14 +30,19 @@ const App = () => {
       updateBoard[clickedSquare] = "💎";
       setBoard(updateBoard);
     } else if (clickedSquare === bombLocation) {
-      updateBoard[clickedSquare] = "💣"
-      setBoard(updateBoard)
+      updateBoard[clickedSquare] = "💣";
+      setBoard(updateBoard);
     } else {
       updateBoard[clickedSquare] = "🌴";
       setBoard(updateBoard);
     }
   };
-  console.log('treasureLocation:', treasureLocation)
+
+  const handleReset = () => {
+    setBoard(["?", "?", "?", "?", "?", "?", "?", "?", "?"]);
+    setTreasureLocation(Math.floor(Math.random() * board.length));
+    setBombLocation(Math.floor(Math.random() * board.length));
+  };
   return (
     <>
       <h1>Treasure Hunt Game</h1>
@@ -52,6 +57,7 @@ const App = () => {
           );
         })}
       </div>
+      <button onClick={handleReset}>Restart Game</button>
     </>
   );
 };
