@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Square from "./components/Square";
 import "./App.css";
-import { click } from "@testing-library/user-event/dist/click";
+
 
 const App = () => {
   const [board, setBoard] = useState([
@@ -17,7 +17,9 @@ const App = () => {
   ]);
 
   const handleGameplay = (clickedSquare) => {
-    alert(clickedSquare);
+    let updateBoard = [...board];
+    updateBoard[clickedSquare] = "🌴"
+    setBoard(updateBoard)
   };
 
   return (
